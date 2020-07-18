@@ -1,1 +1,3 @@
-# a5-seg2105z
+# Assignment 5 (Final Project)
+# SEG 2105 Z
+## Richard Xiong
