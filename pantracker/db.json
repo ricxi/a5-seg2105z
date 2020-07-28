@@ -1,0 +1,28 @@
+{
+  "patients": [
+    {
+      "firstName": "Frank",
+      "lastName": "Sinatra",
+      "healthNumber": 1202853986,
+      "address": {
+        "streetNumber": 0,
+        "streetName": "",
+        "city": "",
+        "province": "",
+        "postalCode": ""
+      }
+    },
+    {
+      "firstName": "Stevie",
+      "lastName": "Wonder",
+      "healthNumber": 802853986,
+      "address": {
+        "streetNumber": 0,
+        "streetName": "",
+        "city": "",
+        "province": "",
+        "postalCode": ""
+      }
+    }
+  ]
+}
