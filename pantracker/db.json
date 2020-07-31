@@ -1,8 +1,8 @@
 {
   "patients": [
     {
-      "firstName": "Frank",
-      "lastName": "Sinatra",
+      "firstName": "Dave",
+      "lastName": "Chappelle",
       "healthNumber": 1202853986,
       "address": {
         "streetNumber": 0,
@@ -13,8 +13,8 @@
       }
     },
     {
-      "firstName": "Stevie",
-      "lastName": "Wonder",
+      "firstName": "Martin",
+      "lastName": "King",
       "healthNumber": 802853986,
       "address": {
         "streetNumber": 0,

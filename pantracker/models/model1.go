@@ -10,115 +10,65 @@ import (
 //PatientDB represents the patient database
 type PatientDB struct {
 	filename string
+	patients Patients // store a array/slice of patients at all times, so that json file doesn't have to be opened each time
 }
 
-// NewPatientDB is called to generate the database
+// NewPatientDB is called to generate a temporary database
+// in order to store patient information
 func NewPatientDB(filename string) *PatientDB {
 
-	patientByteSlice, err := json.MarshalIndent(Patients{}, "", "  ")
-
-	_, err = os.Create(filename)
+	// create a json file
+	_, err := os.Create(filename)
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	err = ioutil.WriteFile(filename, patientByteSlice, 0644)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	return &PatientDB{
+	patientDB := &PatientDB{
 		filename: filename,
+		patients: Patients{},
 	}
+
+	patientDB.updateDatabase()
+
+	return patientDB
 }
 
-// CreatePatient adds a new patient to the DB
-func (p *PatientDB) CreatePatient(patient Patient) {
+// AddPatient adds a new patient to the database
+func (p *PatientDB) AddPatient(patient Patient) {
 
-	// get the json file
-	file, err := ioutil.ReadFile(p.filename)
-	if err != nil {
-		panic(err)
-	}
-
-	// create a Patients struct
-	patients := Patients{}
-	err = json.Unmarshal(file, &patients) // store json file in patients struct
-	if err != nil {
-		panic(err)
-	}
-
-	patients.Patient = append(patients.Patient, patient)
-	// fmt.Println(patients)
-	byteArray, err := json.MarshalIndent(patients, "", "  ")
-	err = ioutil.WriteFile(p.filename, byteArray, 0644)
-	if err != nil {
-		fmt.Println(err)
-	}
-	if err != nil {
-		fmt.Println(err)
-	}
+	p.patients.Patient = append(p.patients.Patient, patient)
+	p.updateDatabase()
 
 }
 
 // GetPatients returns a list of patients
 // FOR NOW, it just prints the list of patients to the console
 func (p *PatientDB) GetPatients() {
-	// get the json file
-	file, err := ioutil.ReadFile(p.filename)
-	if err != nil {
-		panic(err)
-	}
-
-	// create a Patients struct
-	patients := Patients{}
-	err = json.Unmarshal(file, &patients) // store json file in patients struct
-	if err != nil {
-		panic(err)
-	}
-
-	for _, pa := range patients.Patient {
-		fmt.Println(pa.HealthNumber)
+	for _, pa := range p.patients.Patient {
+		fmt.Println(fmt.Sprintf("%s %s", pa.FirstName, pa.LastName))
 	}
 }
 
 // GetPatientByID returns information for the patient by their ID (health card number)
 // FOR NOW, it just prints their info to the console
 func (p *PatientDB) GetPatientByID(healthNumber int) {
-	// get the json file
-	file, err := ioutil.ReadFile(p.filename)
-	if err != nil {
-		panic(err)
-	}
-
-	// create a Patients struct
-	patients := Patients{}
-	err = json.Unmarshal(file, &patients) // store json file in patients struct
-	if err != nil {
-		panic(err)
-	}
 
 	var patientInfo Patient
-	for _, pa := range patients.Patient {
-		if pa.HealthNumber == healthNumber {
-			patientInfo = pa
+	for _, patient := range p.patients.Patient {
+		if patient.HealthNumber == healthNumber {
+			patientInfo = patient
 		}
 	}
 
 	fmt.Println(patientInfo)
 }
 
-// // checkFile checks to see if the file exists,
-// // if it does not, it creates it
-func checkFile(filename string) error {
-	_, err := os.Stat(filename)
-	if os.IsNotExist(err) {
-		_, err := os.Create(filename)
-		if err != nil {
-			return err
-		}
+func (p *PatientDB) updateDatabase() {
+	patientsByteSlice, err := json.MarshalIndent(p.patients, "", "  ") // create a byte slice of Patients struct with indendation
+	err = ioutil.WriteFile(p.filename, patientsByteSlice, 0644)        // write the byte slice to the json file as a json object
+	if err != nil {
+		fmt.Println(err)
 	}
-	return nil
 }
 
 // Patients holds a slice of type Patient

@@ -18,6 +18,7 @@ Various design principles (Chapter 9A) learned in class were used.
 Invidiual components were built separately and then put together. For example, the patient model was built, then the patient controller, and patient view were built. Finally, all the layers were connected together. 
 
 2. **Increase Cohesion**
+I tried to use as much **Functional Cohesion** as possible. I was able to achieve this breaking up complicated logic into more methods and functions that returned one value or performed fewer side-effects. However, this was not always possible, as I had to update the make-shift database I had (the json file).  
 **Utility Cohesion** was used to store certain functions in methods that were used by many different subsystems, such as a function that read in JSON information.
 
 3. **Decoupling Design:** 
