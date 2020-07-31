@@ -2,8 +2,9 @@
 
 Pandemic Registration System (A component based on Assignment #2)  
 
-**Description:** a simple system that patients can use to register for a virus test. Medical staff can then open a repository 
+**Description:** a simple system that patients can use to register for a virus test. Medical staff can then open a repository  
 
+Code for this system is stored under the directory pantracker: <https://github.com/irixoc/a5-seg2105z/tree/master/pantracker>  
 
 ## Design & Architecture
 
