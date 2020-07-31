@@ -28,6 +28,7 @@ func main() {
 	r.HandleFunc("/register", c.NewPatient).Methods("Post")
 
 	r.Handle("/complete", c.Completed).Methods("GET")
+	r.HandleFunc("/repo", c.OpenRepository).Methods("GET")
 
 	address := utilities.GetConfig("config.json")
 	http.ListenAndServe(address, r)

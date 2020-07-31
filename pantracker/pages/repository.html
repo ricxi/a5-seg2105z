@@ -1,0 +1,25 @@
+{{define "yield"}}
+<div class="m-3 p-4 border border-secondary" style="width: 40%;">
+    <h1>Patient Repository</h1>
+    
+    <p>
+        <span class="font-weight-bolder">Instructions:</span> 
+        <ol>
+            <li>Select a patient.</li>
+            <li>Set up an appointment for the selected patient.</li>
+            <li>Call or email patient to inform them about their appointment</li>
+        </ol>
+    </p>
+</div>
+<div class="m-3 p-4 border border-secondary" style="width: 40%;">
+    {{range .PatientList}}
+    <div>
+      <h4>{{.FirstName}} {{.LastName}}</h4>
+      <p><strong>Health Number:</strong> {{.HealthNumber}}</p>
+      <p><strong>Phone Number:</strong> {{.Phone}}</p>
+      <p></strong>Email:</strong> {{.Email}}</p>
+        <hr>
+    </div>
+    {{end}}
+</div>
+{{end}}

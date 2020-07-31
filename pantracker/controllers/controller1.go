@@ -94,3 +94,17 @@ type PatientInformation struct {
 	Province     string `schema:"province"`
 	PostalCode   string `schema:"postalCode"`
 }
+
+// OpenRepository is called when an Employee
+// accesses the repository page. It will signal
+// Views layer to render an HTML page with a list of
+// patients who have registered for a test
+func (rep *Repository) OpenRepository(w http.ResponseWriter, r *http.Request) {
+	patientList := rep.patientDB.GetPatients()
+	v := views.NewView("pages/repository.html")
+	v.RenderTemplate(w, struct {
+		PatientList []models.Patient
+	}{
+		PatientList: patientList,
+	})
+}

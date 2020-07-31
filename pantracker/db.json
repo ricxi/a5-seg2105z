@@ -1,19 +1,49 @@
 {
   "patients": [
     {
-      "firstName": "Richard",
-      "lastName": "Xiong",
-      "email": "r@m.com",
-      "password": "afasdsafsa",
-      "phone": 6132223333,
-      "healthNumber": 1232312,
+      "firstName": "Tommy",
+      "lastName": "Wizzle",
+      "email": "wizzle@email.com",
+      "password": "llllllolllll",
+      "phone": 4163333333,
+      "healthNumber": 7890123456,
       "address": {
-        "streetNumber": 12313,
-        "streetName": "McTee St.",
+        "streetNumber": 123,
+        "streetName": "Tea St.",
         "city": "Ottawa",
         "province": "Ontario",
         "postalCode": "A1B2C3"
       }
-    }
+    },
+    {
+      "firstName": "Jack",
+      "lastName": "Fizzle",
+      "email": "jfizzle@email.com",
+      "password": "adfasfasdf",
+      "phone": 6132223333,
+      "healthNumber": 1234567890,
+      "address": {
+        "streetNumber": 87,
+        "streetName": "Coffee St.",
+        "city": "Ottawa",
+        "province": "Ontario",
+        "postalCode": "B2C3D4"
+      }
+    },
+    {
+      "firstName": "Connor",
+      "lastName": "Hizzle",
+      "email": "chizzle@mail.com",
+      "password": "jkjkjkjk",
+      "phone": 6132223333,
+      "healthNumber": 4371112222,
+      "address": {
+        "streetNumber": 88000,
+        "streetName": "Water Ave.",
+        "city": "Ottawa",
+        "province": "Ontario",
+        "postalCode": "C3D4E5"
+      }
+    }    
   ]
 }

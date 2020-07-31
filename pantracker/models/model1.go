@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 )
 
@@ -19,23 +20,29 @@ type PatientDB struct {
 // in order to store patient information
 func NewPatientDB(filename string) *PatientDB {
 
-	// create a json file
-	_, err := os.Create(filename)
-	if err != nil {
-		fmt.Println(err)
-	}
-
 	patientDB := &PatientDB{
 		filename: filename,
 		patients: Patients{},
 	}
-
-	patientDB.sync()
+	patientDB.load()
 
 	return patientDB
 }
 
-// AddPatient adds a new patient to the database
+// ResetPatientDB can be called to completely erase
+// the patient database and create a new one
+func (p *PatientDB) ResetPatientDB(filename string) {
+	// create a json file
+	_, err := os.Create(filename)
+	if err != nil {
+		log.Println(err)
+	}
+	p.sync()
+}
+
+// AddPatient adds a new patient to a slice/array that
+// is currently loaded in memory, and then it syncs
+// with the database to add the new patient
 func (p *PatientDB) AddPatient(patient Patient) {
 
 	p.patients.Patient = append(p.patients.Patient, patient)
@@ -43,12 +50,10 @@ func (p *PatientDB) AddPatient(patient Patient) {
 
 }
 
-// GetPatients returns a list of patients
-// FOR NOW, it just prints the list of patients to the console
-func (p *PatientDB) GetPatients() {
-	for _, pa := range p.patients.Patient {
-		fmt.Println(fmt.Sprintf("%s %s", pa.FirstName, pa.LastName))
-	}
+// GetPatients returns a array/slice of JSON structs that
+// contain all the patients and their information
+func (p *PatientDB) GetPatients() []Patient {
+	return p.patients.Patient
 }
 
 // GetPatientByID returns information for the patient by their ID (health card number)
@@ -71,6 +76,19 @@ func (p *PatientDB) sync() {
 	err = ioutil.WriteFile(p.filename, patientsByteSlice, 0644)        // write the byte slice to the json file as a json object
 	if err != nil {
 		fmt.Println(err)
+	}
+}
+
+// load is called to load the database into
+// memory, so that it can accessed faster
+func (p *PatientDB) load() {
+	dbInfo, err := ioutil.ReadFile(p.filename)
+	if err != nil {
+		log.Println(err)
+	}
+
+	if json.Unmarshal(dbInfo, &p.patients); err != nil {
+		log.Println(err)
 	}
 }
 

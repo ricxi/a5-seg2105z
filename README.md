@@ -1,8 +1,8 @@
 # Assignment 5 (SEG 2105 Z)
 
-Extension/Revamp of the Pandemic System (Assignment #2)  
+Pandemic Registration System (A component based on Assignment #2)  
 
-**Description:** a simple system that helps test providers to administer viral tests and for lab technicians to record test results for patients.  
+**Description:** a simple system that patients can use to register for a virus test. Medical staff can then open a repository 
 
 
 ## Design & Architecture
@@ -21,9 +21,8 @@ Invidiual components were built separately and then put together. For example, t
 I tried to use as much **Functional Cohesion** as possible. I was able to achieve this breaking up complicated logic into more methods and functions that returned one value or performed fewer side-effects. However, this was not always possible, as I had to update the make-shift database I had (the json file). **Utility Cohesion** was used to store certain functions in methods that were used by many different subsystems, such as a function that read in JSON information.
 
 3. **Decoupling Design:** 
-Understanding the trade-off between **Stamp Coupling** and **Data Coupling**, I chose to *reduce* Data Coupling. This choice was based on the fact that Go did not have many complicated data types, and it was also the standard in Go to pass less arguments over having slightly more complicated arguments (e.g., passing a struct).  
-
-**Common Coupling** was completely eliminated by storing global variables in structs, which is a practice that is also common when it comes to web development in Go. There is also a technique to implement the **Singleton** design pattern in Go, which may be integrated in later iterations.  
+* Understanding the trade-off between **Stamp Coupling** and **Data Coupling**, I chose to *reduce* Data Coupling. This choice was based on the fact that Go did not have many complicated data types, and it was also the standard in Go to pass less arguments over having slightly more complicated arguments (e.g., passing a struct).  
+* **Common Coupling** was completely eliminated by storing global variables in structs, which is a practice that is also common when it comes to web development in Go. There is also a technique to implement the **Singleton** design pattern in Go, which may be integrated in later iterations.  
 
 ### 1st Iteration: build a minimum viable system based on the following user stories
 #### User Stories
