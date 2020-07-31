@@ -11,7 +11,7 @@ Extension/Revamp of the Pandemic System (Assignment #2)
 A mixture of top-down and bottom-up design, but with a more central focus on bottom-up design.
 I knew I wanted the overall structure to be MVC, so I built the small individual components first, and I would start arranging, organizing, and adjusting sections of the system to be fit into an MVC architecture.
 
-Using the divide and conquer design principle learned in class, invidiual components were built separately and then put together. For example, patient model was built, then patient control, then patient view, and then they were connected together.
+Using the **divide and conquer** design principle learned in class (chapter 9A), invidiual components were built separately and then put together. For example, the patient model was built, then the patient controller, and patient view were built. Finally, all the layers were connected together.
 
 
 ### 1st Iteration: build a minimum viable system based on the following user stories
