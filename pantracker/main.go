@@ -5,7 +5,7 @@ package main
 import (
 	"net/http"
 	"pantracker/utilities"
-	views "pantracker/views/pages"
+	"pantracker/views"
 
 	"github.com/gorilla/mux"
 )
@@ -26,7 +26,7 @@ func main() {
 
 	r := mux.NewRouter()
 
-	v := views.NewView("views/pages/patient.html")
+	v := views.NewView("pages/patient.html")
 
 	r.Handle("/", v)
 

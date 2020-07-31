@@ -16,7 +16,7 @@ type View struct {
 // NewView constructor creates a new view type
 func NewView(filepath ...string) *View {
 
-	filepaths := append(filepath, "views/pages/master.html")
+	filepaths := append(filepath, "pages/master.html")
 
 	template, err := template.ParseFiles(filepaths...)
 	if err != nil {
