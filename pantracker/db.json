@@ -1,27 +1,18 @@
 {
   "patients": [
     {
-      "firstName": "Dave",
-      "lastName": "Chappelle",
-      "healthNumber": 1202853986,
+      "firstName": "Richard",
+      "lastName": "Xiong",
+      "email": "r@m.com",
+      "password": "afasdsafsa",
+      "phone": 6132223333,
+      "healthNumber": 1232312,
       "address": {
-        "streetNumber": 0,
-        "streetName": "",
-        "city": "",
-        "province": "",
-        "postalCode": ""
-      }
-    },
-    {
-      "firstName": "Martin",
-      "lastName": "King",
-      "healthNumber": 802853986,
-      "address": {
-        "streetNumber": 0,
-        "streetName": "",
-        "city": "",
-        "province": "",
-        "postalCode": ""
+        "streetNumber": 12313,
+        "streetName": "McTee St.",
+        "city": "Ottawa",
+        "province": "Ontario",
+        "postalCode": "A1B2C3"
       }
     }
   ]

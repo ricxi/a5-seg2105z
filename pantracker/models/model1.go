@@ -30,7 +30,7 @@ func NewPatientDB(filename string) *PatientDB {
 		patients: Patients{},
 	}
 
-	patientDB.updateDatabase()
+	patientDB.sync()
 
 	return patientDB
 }
@@ -39,7 +39,7 @@ func NewPatientDB(filename string) *PatientDB {
 func (p *PatientDB) AddPatient(patient Patient) {
 
 	p.patients.Patient = append(p.patients.Patient, patient)
-	p.updateDatabase()
+	p.sync()
 
 }
 
@@ -65,7 +65,8 @@ func (p *PatientDB) GetPatientByID(healthNumber int) {
 	fmt.Println(patientInfo)
 }
 
-func (p *PatientDB) updateDatabase() {
+// sync updates the make-shift JSON database every time it is called
+func (p *PatientDB) sync() {
 	patientsByteSlice, err := json.MarshalIndent(p.patients, "", "  ") // create a byte slice of Patients struct with indendation
 	err = ioutil.WriteFile(p.filename, patientsByteSlice, 0644)        // write the byte slice to the json file as a json object
 	if err != nil {
@@ -83,6 +84,9 @@ type Patients struct {
 type Patient struct {
 	FirstName    string `json:"firstName"`
 	LastName     string `json:"lastName"`
+	Email        string `json:"email"`
+	Password     string `json:"password"`
+	Phone        int    `json:"phone"`
 	HealthNumber int    `json:"healthNumber"`
 	Address      `json:"address"`
 }

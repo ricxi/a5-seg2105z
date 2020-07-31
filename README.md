@@ -39,10 +39,13 @@ an sql database without affecting the system
 
 ### Tech Stack
 A list of all the programming languages, technology, and frameworks that I used:  
-* Go 1.14 (no front/back-end web framework because go comes with built-in a web server and web templating library)
+* Go 1.14
+* Gorilla Web Framework from go
 * CSS
 * HTML
 * Bootstrap (CSS Framework)
+* JQuery Framework required as a depedency for Bootstrap
+
 
 ### A note about the Go struct
 The structs in Go look a lot like structs in C. However, they are a bit more versatile, but may be used in a way that may look confusing. I am including a short explanation here of how they are used because it also tripped me out in the beginning when I was researching on how to build a web app in Go.

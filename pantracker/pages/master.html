@@ -7,9 +7,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pantracker</title>
+    <link href="frameworks/main.css" rel="stylesheet">
+    <link href="frameworks/bootstrap.min.css" rel="stylesheet">
   </head>
-  <body> 
-    {{template "yield" .}}
+  <body>
+    <div>
+      {{template "yield" .}}
+    </div> 
+    <script src="frameworks/jquery.min.js"></script>
+    <script src="frameworks/bootstrap.bundle.min.js"></script>  
   </body>
 </html>
 {{end}}

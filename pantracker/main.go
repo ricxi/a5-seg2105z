@@ -4,8 +4,9 @@ package main
 
 import (
 	"net/http"
+	"pantracker/controllers"
+	"pantracker/models"
 	"pantracker/utilities"
-	"pantracker/views"
 
 	"github.com/gorilla/mux"
 )
@@ -15,20 +16,18 @@ import (
 // "encoding/json"
 
 func main() {
-	// patientDatabase := models.NewPatientDB("db.json")
-	// patient1 := models.Patient{FirstName: "Dave", LastName: "Chappelle", HealthNumber: 1202853986}
-	// patient2 := models.Patient{FirstName: "Martin", LastName: "King", HealthNumber: 802853986}
-	// patientDatabase.AddPatient(patient1)
-	// patientDatabase.AddPatient(patient2)
-
-	// patientDatabase.GetPatientByID(1202853986)
-	// patientDatabase.GetPatients()
+	patientDB := models.NewPatientDB("db.json")
+	c := controllers.NewRepository(patientDB)
 
 	r := mux.NewRouter()
 
-	v := views.NewView("pages/patient.html")
+	frameworks := http.FileServer(http.Dir("./frameworks/"))
+	r.PathPrefix("/frameworks/").Handler(http.StripPrefix("/frameworks/", frameworks))
 
-	r.Handle("/", v)
+	r.Handle("/", c.Registration).Methods("GET")
+	r.HandleFunc("/register", c.NewPatient).Methods("Post")
+
+	r.Handle("/complete", c.Completed).Methods("GET")
 
 	address := utilities.GetConfig("config.json")
 	http.ListenAndServe(address, r)
