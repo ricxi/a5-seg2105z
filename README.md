@@ -8,8 +8,8 @@ Extension/Revamp of the Pandemic System (Assignment #2)
 ## Design & Architecture
 
 ### Design Decisions
-A mixture of top-down and bottom-up design, but with a more central focus on bottom-up design.
-I knew I wanted the overall structure to be MVC, so I built the small individual components first, and I would start arranging, organizing, and adjusting sections of the system to be fit into an MVC architecture.
+The system was constrcuted using a mixture of **top-down** and **bottom-up** design, but with a more central focus on bottom-up design.
+I knew I wanted the overall architecture to be MVC, so I built the small individual components first, and I would start arranging, organizing, and adjusting sections of the system to be fit into the MVC architecture.
 
 Using the **divide and conquer** design principle learned in class (chapter 9A), invidiual components were built separately and then put together. For example, the patient model was built, then the patient controller, and patient view were built. Finally, all the layers were connected together.
 
