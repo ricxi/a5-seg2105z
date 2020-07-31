@@ -73,3 +73,7 @@ Public methods in go start with a captial letter.
 Private methods start with a lower case letter.  
 The top level main package runs the application (located at main.go).  
 Packages in go are a lot like classes.  
+
+
+### Link to UML DIAGRAM
+<https://cruise.eecs.uottawa.ca/umpleonline/umple.php?model=20073114rth2g58>
