@@ -7,10 +7,11 @@ Extension/Revamp of the Pandemic System (Assignment #2)
 
 ## Design & Architecture
 
-### Design Process
+### Design Decisions
 A mixture of top-down and bottom-up design, but with a more central focus on bottom-up design.
 I knew I wanted the overall structure to be MVC, so I built the small individual components first, and I would start arranging, organizing, and adjusting sections of the system to be fit into an MVC architecture.
 
+Using the divide and conquer design principle learned in class, invidiual components were built separately and then put together. For example, patient model was built, then patient control, then patient view, and then they were connected together.
 
 
 ### 1st Iteration: build a minimum viable system based on the following user stories
@@ -20,6 +21,10 @@ I knew I wanted the overall structure to be MVC, so I built the small individual
 3. Lab Technician accesses patient repository to record test results
 4. User can login and see their test results
 
+State will be stored using a JSON file instead of an SQL database. For example, all patients and their information
+will be stored in a json file. The plan is to switch to SQL in later iterations. The entire models package can be reeingineered to use
+an sql database without affecting the system
+
 
 ### Tech Stack
 A list of all the programming languages, technology, and frameworks that I used:  
@@ -28,4 +33,9 @@ A list of all the programming languages, technology, and frameworks that I used:
 * HTML
 * Bootstrap (CSS Framework)
 
-I chose Go as the main language for developing this project because I had worked with it in my CSI2120 class and I found it interesting, so I wanted to get better at using it.
+### A note about the Go struct
+The structs in Go look a lot like structs in C. However, they are a bit more versatile and may look a bit confusing.
+1. Methods can be added to structs in go, so OOP design can be used
+2. structs can also be used to work with JSON data
+So, in the project, there are going to be a few different usages of structs.  
+structs used to create and store 
