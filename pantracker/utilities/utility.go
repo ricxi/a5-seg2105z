@@ -1,3 +1,5 @@
+// Author: Richard Xiong
+
 package utilities
 
 import (
@@ -14,7 +16,7 @@ type Config struct {
 
 // GetConfig receives the path to the config file
 // as an argument and returns a string of the host
-// and port for ListenAndServe to use to launch the server
+// and port for ListenAndServe to use
 func GetConfig(configPath string) string {
 
 	configFile, err := ioutil.ReadFile(configPath)
@@ -22,11 +24,10 @@ func GetConfig(configPath string) string {
 		panic(err)
 	}
 
-	var c Config
-	err = json.Unmarshal(configFile, &c)
-	if err != nil {
+	var config Config
+	if json.Unmarshal(configFile, &config); err != nil {
 		panic(err)
 	}
 
-	return fmt.Sprintf("%s:%s", c.Host, c.Port)
+	return fmt.Sprintf("%s:%s", config.Host, config.Port)
 }
