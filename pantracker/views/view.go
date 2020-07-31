@@ -1,5 +1,6 @@
 // Author: Richard Xiong
 
+// Package views is the layer that generates views
 package views
 
 import (
@@ -38,7 +39,8 @@ func (v *View) RenderTemplate(w http.ResponseWriter, data interface{}) error {
 }
 
 // ServeHTTP is implemented by View type from Handler interface
-// This used the adapter desing pattern
+// I AM NOT SURE IF THIS IS CONSIDERED MY ORIGINAL WORK . I RESEARCHED IT
+// ONLINE AND FIGURED OUT HOW TO IMPLEMENT IT, BUT IT LOOKS A LOT LIKE THE ORIGINAL
 func (v *View) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if err := v.RenderTemplate(w, nil); err != nil {
 		log.Println(err)

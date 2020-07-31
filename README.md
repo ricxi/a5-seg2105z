@@ -4,7 +4,15 @@ Pandemic Registration System (A component based on Assignment #2)
 
 **Description:** a simple system that patients can use to register for a virus test. Medical staff can then open a repository  
 
-Code for this system is stored under the directory pantracker: <https://github.com/irixoc/a5-seg2105z/tree/master/pantracker>  
+**Code for this system is stored under the directory pantracker:** <https://github.com/irixoc/a5-seg2105z/tree/master/pantracker>  
+
+### Installation Instructions
+1. Download the repository as a zip file or clone it.
+2. Go into the directory names pantracker. You now have two options.  
+* If you have a windows computer, click on the file that says pantracker.exe  
+* If you have mac computer, click on the file that says pantracker.  
+3. Now go to http://localhost:4000/ to simulate being a patient and register.  
+4. Afterwards, go to http://localhost:4000/repo to simulate being a medical personnel who will review patient information
 
 ## Design & Architecture
 
@@ -62,4 +70,6 @@ For those types of structs, they'll often have a label beside them (as seen belo
 
 ### Additional Notes
 Public methods in go start with a captial letter.  
-Private methods start with a lower case letter.
+Private methods start with a lower case letter.  
+The top level main package runs the application (located at main.go).  
+Packages in go are a lot like classes.  
