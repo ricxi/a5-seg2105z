@@ -36,7 +36,8 @@ A list of all the programming languages, technology, and frameworks that I used:
 ### A note about the Go struct
 The structs in Go look a lot like structs in C. However, they are a bit more versatile, but may be used in a way that may look confusing. I am including a short explanation here of how they are used because it also tripped me out in the beginning when I was researching on how to build a web app in Go.
 1. Methods can be added to structs in go, so OOP design can be used
-
+![OOPstyle](https://github.com/irixoc/a5-seg2105z/blob/master/rmImages/OOP.png)
 2. structs can also be used to work with JSON data
+![jsonStyle](https://github.com/irixoc/a5-seg2105z/blob/master/rmImages/json.png)
 So, in the project, there are going to be a few different usages of structs.  
 structs used to create and store 
