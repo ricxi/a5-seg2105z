@@ -49,7 +49,7 @@ The structs in Go look a lot like structs in C. However, they are a bit more ver
 1. Methods can be added to structs in go, so OOP design can be used.
 * For example, PatientDB is a struct, but it has a constructor called NewPatientDB, and it also has a method called CreatePatient. Methods for a struct have this syntax: *func(s *StructName) MethodName (arguments)*  
 ![OOPstyle](https://github.com/irixoc/a5-seg2105z/blob/master/rmImages/OOP2.png)
-2. structs can also be used to work easily with JSON objects
+2. A struct can also be used to work easily with JSON objects
 * For those types of structs, they'll often have a label that beside them (as seen below)  
 ![jsonStyle](https://github.com/irixoc/a5-seg2105z/blob/master/rmImages/json.png)  
 
