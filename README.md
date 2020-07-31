@@ -33,7 +33,7 @@ I tried to use as much **Functional Cohesion** as possible. I was able to achiev
 * Understanding the trade-off between **Stamp Coupling** and **Data Coupling**, I chose to *reduce* Data Coupling. This choice was based on the fact that Go did not have many complicated data types, and it was also the standard in Go to pass less arguments over having slightly more complicated arguments (e.g., passing a struct).  
 * **Common Coupling** was completely eliminated by storing global variables in structs, which is a practice that is also common when it comes to web development in Go. There is also a technique to implement the **Singleton** design pattern in Go, which may be integrated in later iterations.  
 
-### 1st Iteration: build a minimum viable system based on the following user stories
+### **1st Iteration:** Building a Minimum Viable System (based on the following user stories)
 #### User Stories
 1. User enters personal information on patient information page
 2. Test Provider can view available users on a patient repository and select a user for a test
@@ -42,6 +42,10 @@ I tried to use as much **Functional Cohesion** as possible. I was able to achiev
 
 State will be stored using a JSON file instead of an SQL database. This was done to simplify things so that the application can be built quickly with less overhead. For example, all patients and their information will be stored in a json file. The plan is to switch to SQL for later iterations. The system was built in accordance to the principles of **Stable Architecture**, so the entire models package can be **reeingineered** to use an sql database without affecting the system.
 
+### **2nd Iteration: ** Pivoting for time (changing user stories)  
+As with most software projects, sometimes there isn't enough time to finish it. Thus, I decided to pivot and build a simpler system. I updated the user stories to reflect this new system.
+1. Patient enters personal information to register for a viral test.
+2. Medical staff opens a repository to view all registered patients and book an appointment for them.
 
 
 ### A note about the Go struct
@@ -53,3 +57,7 @@ For example, PatientDB is a struct, but it has a constructor called NewPatientDB
 2. A struct can also be used to work easily with JSON objects  
 For those types of structs, they'll often have a label beside them (as seen below)  
 ![jsonStyle](https://github.com/irixoc/a5-seg2105z/blob/master/rmImages/json.png)  
+
+### Additional Notes
+Public methods in go start with a captial letter.
+Private methods start with a lower case letter.
