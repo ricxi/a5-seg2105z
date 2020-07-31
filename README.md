@@ -11,10 +11,19 @@ Extension/Revamp of the Pandemic System (Assignment #2)
 The system was constrcuted using a mixture of **top-down** and **bottom-up** design, but with a more central focus on bottom-up design.
 I knew I wanted the overall architecture to be MVC, so I built the small individual components first, and I would start arranging, organizing, and adjusting sections of the system to be fit into the MVC architecture.
 
-Using the **Divide and Conquer** design principle learned in class (Chapter 9A), invidiual components were built separately and then put together. For example, the patient model was built, then the patient controller, and patient view were built. Finally, all the layers were connected together.  
+### Design Principles
+Various design principles (Chapter 9A) learned in class were used. 
 
-**Decoupling Design** Principles (Chapter 9A) were also applied. Understanding the trade-off between **Stamp Coupling** and **Data Coupling**, I chose to *reduce* Data Coupling. This choice was based on the fact that Go did not have many complicated data types, and it was also the standard in Go to pass less arguments over having slightly more complicated arguments (e.g., passing a struct).  
+1. **Divide and Conquer**  
+Invidiual components were built separately and then put together. For example, the patient model was built, then the patient controller, and patient view were built. Finally, all the layers were connected together. 
 
+2. **Increase Cohesion**
+**Utility Cohesion** was used to store certain functions in methods that were used by many different subsystems, such as a function that read in JSON information.
+
+3. **Decoupling Design:** 
+Understanding the trade-off between **Stamp Coupling** and **Data Coupling**, I chose to *reduce* Data Coupling. This choice was based on the fact that Go did not have many complicated data types, and it was also the standard in Go to pass less arguments over having slightly more complicated arguments (e.g., passing a struct).  
+
+**Common Coupling** was completely eliminated by storing global variables in structs, which is a practice that is also common when it comes to web development in Go. There is also a technique to implement the **Singleton** design pattern in Go, which may be integrated in later iterations.  
 
 ### 1st Iteration: build a minimum viable system based on the following user stories
 #### User Stories
