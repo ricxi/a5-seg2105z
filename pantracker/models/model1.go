@@ -7,28 +7,6 @@ import (
 	"os"
 )
 
-// Patients is a slice of patients
-type Patients struct {
-	Patient []Patient `json:"patients"`
-}
-
-// Patient records patient into
-type Patient struct {
-	FirstName    string `json:"firstName"`
-	LastName     string `json:"lastName"`
-	HealthNumber int    `json:"healthNumber"`
-	Address      `json:"address"`
-}
-
-// Address information
-type Address struct {
-	StreetNumber int    `json:"streetNumber"`
-	StreetName   string `json:"streetName"`
-	City         string `json:"city"`
-	Province     string `json:"province"`
-	PostalCode   string `json:"postalCode"`
-}
-
 //PatientDB represents the patient database
 type PatientDB struct {
 	filename string
@@ -141,4 +119,28 @@ func checkFile(filename string) error {
 		}
 	}
 	return nil
+}
+
+// Patients holds a slice of type Patient
+type Patients struct {
+	Patient []Patient `json:"patients"`
+}
+
+// Patient struct is used to create/store patient info
+// in the form of JSON data
+type Patient struct {
+	FirstName    string `json:"firstName"`
+	LastName     string `json:"lastName"`
+	HealthNumber int    `json:"healthNumber"`
+	Address      `json:"address"`
+}
+
+// Address struct used to create and store
+// a JSON object that records address information
+type Address struct {
+	StreetNumber int    `json:"streetNumber"`
+	StreetName   string `json:"streetName"`
+	City         string `json:"city"`
+	Province     string `json:"province"`
+	PostalCode   string `json:"postalCode"`
 }
