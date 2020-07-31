@@ -13,7 +13,7 @@ I knew I wanted the overall architecture to be MVC, so I built the small individ
 
 Using the **Divide and Conquer** design principle learned in class (Chapter 9A), invidiual components were built separately and then put together. For example, the patient model was built, then the patient controller, and patient view were built. Finally, all the layers were connected together.  
 
-**Decoupling Design** Principles (Chapter 9A) were also applied. Understanding the trade-off between Stamp and Data Coupling, I chose to reduce Data Coupling. This choice was based on the fact that Go did not have many complicated data types, and it was also the standard in Go to pass less arguments over having slightly more complicated arguments (e.g., passing a struct).  
+**Decoupling Design** Principles (Chapter 9A) were also applied. Understanding the trade-off between **Stamp Coupling** and **Data Coupling**, I chose to *reduce* Data Coupling. This choice was based on the fact that Go did not have many complicated data types, and it was also the standard in Go to pass less arguments over having slightly more complicated arguments (e.g., passing a struct).  
 
 
 ### 1st Iteration: build a minimum viable system based on the following user stories
