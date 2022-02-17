@@ -1,4 +1,5 @@
 # Assignment 5 (SEG 2105 Z)
+**DISCLAIMER:** my skills have and how I use Go have changed and improved significantly since this project.
 
 Pandemic Registration System (A component based on Assignment #2)  
 
