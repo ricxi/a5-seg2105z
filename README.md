@@ -1,7 +1,7 @@
 # Assignment 5 (SEG 2105 Z)
 **DISCLAIMER:** my skills and how I use Go have changed and improved significantly since this project.
 
-Pandemic Registration System (A component based on Assignment #2)  
+**Assignment #2:** Pandemic Registration System
 
 **Description:** a simple system that patients can use to register for a virus test. Medical staff can then open a repository  
 
