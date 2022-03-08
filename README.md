@@ -1,5 +1,5 @@
 # Assignment 5 (SEG 2105 Z)
-**DISCLAIMER:** my skills and how I use Go have changed and improved significantly since this project.
+**DISCLAIMER:** My overall web development and Go skills have improved significantly since this project.
 
 **Assignment #2:** Pandemic Registration System
 
